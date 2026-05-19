@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Покана – Свето Кръщение София</title>
+
+<!-- Премиум шрифтове -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Cormorant Garamond', serif;
+        background: linear-gradient(180deg, #FFF7D6 0%, #FFE9A8 100%);
+        color: #6A553A;
+        overflow-x: hidden;
+        font-size: 20px;
+    }
+
+    /* Глобални балони */
+    .balloon {
+        position: fixed;
+        width: 140px;
+        height: 180px;
+        background: rgba(255, 220, 120, 0.35);
+        border-radius: 50%;
+        filter: blur(4px);
+        animation: floatUp 16s infinite ease-in;
+        z-index: -1;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(110vh) scale(0.8); opacity: 0; }
+        30% { opacity: 1; }
+        100% { transform: translateY(-130vh) scale(1.2); opacity: 0; }
+    }
+
+    /* HERO секция */
+    .hero {
+        padding: 20px 20px 10px 20px;
+        text-align: center;
+    }
+
+    .hero-title-top {
+        font-family: 'Great Vibes', cursive;
+        font-size: 78px;
+        color: #C89A1C;
+        margin: 0;
+        line-height: 0.9;
+    }
+
+    .hero img {
+        width: 80%;
+        max-width: 380px;
+        border-radius: 22px;
+        box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+        margin: 10px 0;
+    }
+
+    .hero-title-mid {
+        font-family: 'Playfair Display', serif;
+        font-size: 44px;
+        font-weight: 600;
+        color: #B8860B;
+        margin: 10px 0 0 0;
+        line-height: 1;
+    }
+
+    .hero-title-name {
+        font-family: 'Great Vibes', cursive;
+        font-size: 72px;
+        color: #C89A1C;
+        margin: 5px 0 0 0;
+        line-height: 1;
+    }
+
+    .hero-text {
+        font-size: 20px;
+        margin-top: 10px;
+        line-height: 1.35;
+        color: #6A553A;
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* Секции */
+    .section {
+        padding: 25px 20px;
+        text-align: center;
+    }
+
+    h2 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 64px;
+        color: #C89A1C;
+        margin: 0 0 5px 0;
+        line-height: 0.9;
+    }
+
+    p {
+        margin: 3px 0;
+        font-size: 21px;
+        font-family: 'Cormorant Garamond', serif;
+        color: #7A6247;
+    }
+
+    /* Бутони */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 20px;
+        background: linear-gradient(90deg, #FFD75E, #F7C948);
+        border-radius: 12px;
+        text-decoration: none;
+        color: #5A4A00;
+        font-weight: 600;
+        margin: 10px;
+        box-shadow: 0 5px 14px rgba(0,0,0,0.15);
+        transition: 0.3s;
+        font-size: 20px;
+    }
+
+    .btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+
+    /* Три снимки една до друга */
+    .photo-row {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .photo-row img {
+        width: 28%;
+        min-width: 150px;
+        border-radius: 14px;
+        border: 4px solid #F7C948;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    iframe {
+        width: 100%;
+        height: 650px;
+        border: none;
+        border-radius: 18px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Глобални балони -->
+<div class="balloon" style="left:5%; animation-delay:0s;"></div>
+<div class="balloon" style="left:25%; animation-delay:3s;"></div>
+<div class="balloon" style="left:55%; animation-delay:6s;"></div>
+<div class="balloon" style="left:75%; animation-delay:1s;"></div>
+<div class="balloon" style="left:90%; animation-delay:4s;"></div>
+
+<!-- HERO -->
+<div class="hero">
+
+    <div class="hero-title-top">Покана</div>
+
+    <img src="{{ url_for('static', filename='images/hero.jpg') }}">
+
+    <div class="hero-title-mid">Свето Кръщение</div>
+
+    <div class="hero-title-name">София</div>
+
+    <div class="hero-text">
+        Скъпи роднини и приятели,<br>
+        с отворени сърца ви каним да споделим този специален за нас ден<br>
+        и да го превърнем в светъл празник!
+    </div>
+</div>
+
+<!-- ДАТА -->
+<div class="section">
+    <h2>15 август 2026</h2>
+
+    <p><strong>Ритуал:</strong> 14:30 ч., храм „Св. Петка“, гр. Варна</p>
+
+    <a class="btn" href="https://maps.google.com/?q=43.2101294,27.9155063" target="_blank">
+        📍 Локация църква
+    </a>
+
+    <p><strong>Празненство:</strong> 17:00 ч., „Once upon a party“, м-т Звездица</p>
+
+    <a class="btn" href="https://maps.google.com/?q=43.1818961,27.7929732" target="_blank">
+        🎉 Локация празненство
+    </a>
+</div>
+
+
+<!-- ТРИ СНИМКИ -->
+<div class="section">
+    <div class="photo-row">
+        <img src="{{ url_for('static', filename='images/photo1.jpg') }}">
+        <img src="{{ url_for('static', filename='images/photo2.jpg') }}">
+        <img src="{{ url_for('static', filename='images/photo3.jpg') }}">
+    </div>
+</div>
+
+<!-- АНКЕТА -->
+<div class="section">
+    <h2>Ще празнуваш ли с нас?</h2>
+
+    <p style="font-size: 22px; margin-bottom: 15px; color:#7A6247; font-family:'Cormorant Garamond', serif;">
+        Ще се радваме да потвърдите присъствието си до 15.07.2026 г.,<br>
+        като попълните кратката анкета по‑долу.
+    </p>
+
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeUfkC9Hm14EiiKOdQmZkREw0q6yCHjZRgBsvwsU3OhCw4nOQ/viewform?embedded=true"></iframe>
+</div>
+
+</body>
+</html>
